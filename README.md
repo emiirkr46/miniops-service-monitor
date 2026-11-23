@@ -1,57 +1,95 @@
 # MiniOps – Servis İzleme Sistemi
 
-## Proje Hakkında
+## 1. Proje Hakkında
 
-MiniOps, web servislerinin erişilebilirliğini ve yanıt sürelerini kontrol etmek amacıyla geliştirilen basit bir servis izleme uygulamasıdır.
+MiniOps, web servislerinin erişilebilirliğini ve yanıt sürelerini kontrol etmek amacıyla geliştirilen Python tabanlı bir servis izleme uygulamasıdır.
 
-Projenin temel amacı, kullanıcıların takip etmek istedikleri web servislerini sisteme ekleyebilmesi ve bu servislerin çalışma durumlarını kolayca kontrol edebilmesidir.
+Uygulama, kullanıcıların takip etmek istedikleri web servislerini sisteme eklemelerine ve bu servislerin çalışma durumlarını manuel olarak kontrol etmelerine olanak sağlar.
 
-## Projenin Amacı
+## 2. Projenin Amacı
 
-Web servislerinde yaşanabilecek erişim problemlerini tespit etmek ve servislerin durumunu kullanıcıya anlaşılır bir şekilde sunmak hedeflenmektedir.
+Web servislerinde meydana gelebilecek erişim problemlerinin tespit edilmesi ve servislerin durum bilgilerinin kullanıcıya anlaşılır şekilde sunulması amaçlanmaktadır.
 
-## Hedef Kullanıcılar
+## 3. Hedef Kullanıcılar
 
 - Yazılım geliştiriciler
-- Sistem ve ağ yönetimiyle ilgilenenler
-- Web servislerinin durumunu takip etmek isteyen kullanıcılar
+- Sistem ve ağ yöneticileri
+- Web servislerinin erişilebilirliğini takip etmek isteyen kullanıcılar
 
-## Kullanılacak Teknolojiler
+## 4. Kullanılan Teknolojiler
 
 - Python
 - Streamlit
 - Requests
 - JSON
-- GitHub
+- GitHub ve GitHub Projects
 
-## Geliştirilecek Özellikler
+## 5. Geliştirilen Özellikler
 
-1. **Servis Ekleme:** Kullanıcının izlemek istediği web servisinin adresini sisteme ekleyebilmesi.
-2. **Servis Kontrolü:** Eklenen servislerin HTTP durum kodunun ve yanıt süresinin kontrol edilmesi.
-3. Kontrol geçmişinin tutulması.
-4. Otomatik servis kontrolü.
-5. Hatalı servisler için uyarı sistemi.
+**1. Servis Ekleme**
 
-## Proje Durumu
+Kullanıcı, takip etmek istediği web servisinin adını ve URL adresini sisteme ekleyebilir. Eklenen servisler JSON dosyasında saklanır.
 
-Proje geliştirme aşamasındadır. İlk aşamada servis ekleme ve HTTP durum kontrolü özellikleri geliştirilecektir.
+**2. HTTP Durum Kodu ve Yanıt Süresi Kontrolü**
 
-## Kurulum ve Çalıştırma
+Kullanıcı, kayıtlı servisleri manuel olarak kontrol edebilir. HTTP durum kodu ve yanıt süresi milisaniye cinsinden görüntülenir. Erişim hataları kullanıcıya bildirilir.
 
-Gerekli Python paketleri kurulduktan sonra uygulama aşağıdaki komutla çalıştırılacaktır:
+## 6. Proje Takip Panosu
+
+Projenin görevleri, geliştirme aşamaları ve çalışma durumları GitHub Projects üzerinden takip edilmektedir.
+
+[MiniOps Geliştirme Takip Panosu](https://github.com/users/emiirk46/projects/1/views/1)
+
+## 7. Kurulum ve Çalıştırma
+
+Projeyi yerel bilgisayarınızda çalıştırmak için Python kurulu olmalıdır.
+
+Depoyu bilgisayarınıza indirin:
+
+```bash
+git clone https://github.com/emiirk46/miniops-service-monitor.git
+cd miniops-service-monitor
+```
+
+Gerekli Python paketlerini yükleyin:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Uygulamayı başlatın:
+
+```bash
 streamlit run app.py
 ```
 
-## Kullanım
+## 8. Uygulama Özelliklerinin Test Edilmesi
+
+**Test 1 – Servis Ekleme**
 
 1. Uygulamayı başlatın.
-2. İzlemek istediğiniz web servisinin adresini girin.
-3. Servisi sisteme ekleyin.
-4. Servis kontrolü yaparak HTTP durum kodunu ve yanıt süresini görüntüleyin.
+2. Servis adı alanına "Örnek Servis" yazın.
+3. URL alanına `https://example.com` adresini girin.
+4. Servis Ekle butonuna basın.
+5. Servisin kayıtlı servisler listesinde görüntülendiğini kontrol edin.
+6. Uygulamayı yeniden başlatarak kaydın korunup korunmadığını kontrol edin.
 
-## Proje Panosu
+Beklenen sonuç: Servis başarıyla eklenmeli ve `services.json` dosyasında saklanmalıdır.
 
-GitHub Projects bağlantısı eklenecektir.
+**Test 2 – HTTP Durum Kodu ve Yanıt Süresi**
+
+1. Kayıtlı servisler arasından test etmek istediğiniz servisi seçin.
+2. Kontrol Et butonuna basın.
+3. Görüntülenen HTTP durum kodunu ve yanıt süresini inceleyin.
+
+Beklenen sonuç: Servisin HTTP durum kodu ve yanıt süresi milisaniye cinsinden gösterilmelidir. Erişim hatalarında kullanıcıya hata mesajı sunulmalıdır.
+
+## 9. Geliştirme Planı
+
+Projenin sonraki aşamalarında aşağıdaki özelliklerin geliştirilmesi planlanmaktadır:
+
+- Servis kontrol geçmişinin kaydedilmesi
+- Otomatik periyodik servis kontrolü
+- Başarısız servisler için uyarı sistemi
+
+Bu özellikler mevcut sürümde henüz tamamlanmamıştır.
