@@ -38,7 +38,7 @@ Kullanıcı, kayıtlı servisleri manuel olarak kontrol edebilir. HTTP durum kod
 
 Projenin görevleri, geliştirme aşamaları ve çalışma durumları GitHub Projects üzerinden takip edilmektedir.
 
-[MiniOps Geliştirme Takip Panosu](https://github.com/users/emiirk46/projects/1/views/1)
+[MiniOps Geliştirme Takip Panosu](https://github.com/users/emiirkr46/projects/1/views/1)
 
 ## 7. Kurulum ve Çalıştırma
 
@@ -47,7 +47,7 @@ Projeyi yerel bilgisayarınızda çalıştırmak için Python kurulu olmalıdır
 Depoyu bilgisayarınıza indirin:
 
 ```bash
-git clone https://github.com/emiirk46/miniops-service-monitor.git
+git clone https://github.com/emiirkr46/miniops-service-monitor.git
 cd miniops-service-monitor
 ```
 
